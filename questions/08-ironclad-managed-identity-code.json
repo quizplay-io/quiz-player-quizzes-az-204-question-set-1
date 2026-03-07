@@ -1,0 +1,25 @@
+{
+    "id": "az204-08-ironclad-managed-identity-code",
+    "question": "You are writing the code for the Ironclad Security microservice. Which class from the `Azure.Identity` library should you use to automatically handle authentication to other Azure services using the service's assigned Managed Identity?",
+    "options": [
+        {
+            "text": "ClientSecretCredential",
+            "correct": false
+        },
+        {
+            "text": "DefaultAzureCredential",
+            "correct": true
+        },
+        {
+            "text": "ChainedTokenCredential",
+            "correct": false
+        },
+        {
+            "text": "ManagedIdentityCredential",
+            "correct": false
+        }
+    ],
+    "explanation": "**DefaultAzureCredential** is the recommended class for most scenarios. It provides a default authentication flow that automatically detects the environment and uses the appropriate credential — including Managed Identity when deployed to Azure. This means the same code works during local development (using CLI or IDE credentials) and in production (using the assigned Managed Identity) without any code changes.\n\n**Why not the other options:**\n- **ClientSecretCredential** — Requires a hard-coded client secret, which violates the security requirement.\n- **ManagedIdentityCredential** — Works specifically with managed identities and is a valid choice in production environments where you want to explicitly restrict to managed identity auth only. However, `DefaultAzureCredential` is the standard recommendation as it handles both dev and production seamlessly.\n- **ChainedTokenCredential** — A concrete class that chains multiple credential types together, trying each in order. While flexible, it requires manual configuration and is unnecessary when `DefaultAzureCredential` already provides this behavior.",
+    "category": "Implement Azure Security",
+    "caseStudy": "scenarios/case_study_ironclad_security.json"
+}

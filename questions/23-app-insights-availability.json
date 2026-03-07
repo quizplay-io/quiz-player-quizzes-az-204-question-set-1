@@ -1,0 +1,24 @@
+{
+    "id": "az204-23-app-insights-availability",
+    "question": "You want to monitor your web application from multiple locations around the world to ensure it is reachable and responsive. Which feature of Application Insights should you use?",
+    "options": [
+        {
+            "text": "Smart Detection",
+            "correct": false
+        },
+        {
+            "text": "Availability Tests",
+            "correct": true
+        },
+        {
+            "text": "User Flows",
+            "correct": false
+        },
+        {
+            "text": "Profiler",
+            "correct": false
+        }
+    ],
+    "explanation": "**Availability Tests** (such as URL ping tests and Standard tests) allow you to ping your application's entry point from various Azure regions globally to monitor uptime and responsiveness.\n\n**Why not the other options:**\n- **Smart Detection** — Automatically analyzes telemetry to find unusual patterns or performance anomalies.\n- **User Flows** — Visualizes how users move through your application.\n- **Profiler** — Captures detailed stack traces during performance bottlenecks to help you identify the root cause in code.",
+    "category": "Monitor, Troubleshoot, and Optimize Azure Solutions"
+}

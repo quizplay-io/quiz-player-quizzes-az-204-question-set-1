@@ -1,0 +1,25 @@
+{
+    "id": "az204-05-harborview-storage-lifecycle",
+    "question": "HarborView Analytics requires a lifecycle management policy for their Blob Storage. You need to implement a policy that moves blobs to the Archive tier if they haven't been modified in over 30 days. Which JSON property should you use in the policy rule?",
+    "options": [
+        {
+            "text": "daysAfterCreationGreaterThan",
+            "correct": false
+        },
+        {
+            "text": "daysAfterModificationGreaterThan",
+            "correct": true
+        },
+        {
+            "text": "daysAfterLastAccessTimeGreaterThan",
+            "correct": false
+        },
+        {
+            "text": "tierToArchiveAfterDays",
+            "correct": false
+        }
+    ],
+    "explanation": "The **daysAfterModificationGreaterThan** property within a lifecycle management policy actions block specifies the number of days after the last modification that an action (like tiering to Archive) should be taken.\n\n**Why not the other options:**\n- **daysAfterCreationGreaterThan** — Bases the action on when the blob was first created, even if it was recently modified.\n- **daysAfterLastAccessTimeGreaterThan** — Bases the action on when the blob was last read; this requires 'last access time tracking' to be enabled on the account.\n- **tierToArchiveAfterDays** — Not a valid property name in the Azure Storage Lifecycle management schema.",
+    "category": "Develop for Azure Storage",
+    "caseStudy": "scenarios/case_study_harborview_analytics.json"
+}

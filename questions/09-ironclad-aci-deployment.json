@@ -1,0 +1,25 @@
+{
+    "id": "az204-09-ironclad-aci-deployment",
+    "question": "You need to deploy a microservice for Ironclad Security to Azure Container Instances (ACI). The service requires 4 GB of RAM and 2 vCPUs. You want to use a YAML file for the deployment to ensure it is repeatable. Which section of the ACI YAML schema defines the resource requirements?",
+    "options": [
+        {
+            "text": "properties.containers.resources.requests",
+            "correct": true
+        },
+        {
+            "text": "spec.containers.resources.limits",
+            "correct": false
+        },
+        {
+            "text": "metadata.resources",
+            "correct": false
+        },
+        {
+            "text": "containers.compute.specs",
+            "correct": false
+        }
+    ],
+    "explanation": "In the Azure Container Instances YAML schema (which follows the ARM resource structure), the **properties.containers[].resources.requests** section specifies the CPU and memory resources required for a container. Within the `requests` object, you define `cpu` and `memoryInGB` values.\n\n**Why not the other options:**\n- **spec.containers.resources.limits** — This is standard Kubernetes YAML, not the specific ACI YAML schema used with `az container create`.\n- **metadata.resources** — Incorrect path in the schema.\n- **containers.compute.specs** — Not a valid section in the ACI schema.",
+    "category": "Develop Azure Compute Solutions",
+    "caseStudy": "scenarios/case_study_ironclad_security.json"
+}

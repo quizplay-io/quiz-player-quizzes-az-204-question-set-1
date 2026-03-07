@@ -1,0 +1,24 @@
+{
+    "id": "az204-22-eventgrid-deadletter",
+    "question": "You are using Azure Event Grid to route messages between services. You need to ensure that events that cannot be delivered to a destination after a certain number of retries are saved to an Azure Storage account. What should you configure?",
+    "options": [
+        {
+            "text": "Event Hubs Capture",
+            "correct": false
+        },
+        {
+            "text": "Dead-lettering",
+            "correct": true
+        },
+        {
+            "text": "Retry policy with 0 retries",
+            "correct": false
+        },
+        {
+            "text": "Azure Service Health alerts",
+            "correct": false
+        }
+    ],
+    "explanation": "**Dead-lettering** in Event Grid allows you to specify a storage account where events that fail delivery (after exhausting retry attempts or reaching their time-to-live) are stored for later investigation.\n\n**Why not the other options:**\n- **Event Hubs Capture** — Automatically sends *all* streaming data to storage, not just failed events from Event Grid.\n- **Retry policy** — Controls how many times Event Grid tries to deliver an event, but doesn't store the event if all retries fail.\n- **Azure Service Health** — For monitoring the status of Azure services, not for individual event delivery failures.",
+    "category": "Connect to and Consume Azure Services and Third-party Services"
+}

@@ -1,0 +1,9 @@
+{
+    "id": "case_study_wavelength_media",
+    "tabs": [
+        {
+            "title": "Scenario",
+            "content": "**Wavelength Media** is a global content delivery network focusing on high-definition video streaming. They use Azure Service Bus to coordinate tasks between their video encoding engine and their distribution servers.\n\n**Architecture Details:**\n- **Video Encoding**: A set of Azure Functions that process new video uploads.\n- **Coordination**: An Azure Service Bus Topic with multiple subscriptions to notify distribution nodes in different regions.\n- **Caching**: Azure Cache for Redis used to store frequently accessed video metadata.\n\n**Requirements:**\n- Ensure that video encoding tasks are processed in the order they are received.\n- Distribution nodes must only receive notifications for the regions they are responsible for."
+        }
+    ]
+}

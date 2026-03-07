@@ -1,0 +1,21 @@
+{
+    "id": "az204-32-apim-limit-call-rate",
+    "type": "ordering",
+    "question": "You are configuring the inbound policy section for an API in Azure API Management. You need to inherit parent policies, apply rate limiting per IP address, and add a custom header. Place the policy components in the correct order.",
+    "items": [
+        "<set-header name=\"X-Custom-Header\" exists-action=\"override\"><value>processed</value></set-header>",
+        "</inbound>",
+        "<base />",
+        "<rate-limit-by-key calls=\"100\" renewal-period=\"60\" counter-key=\"@(context.Request.IpAddress)\" />",
+        "<inbound>"
+    ],
+    "correctOrder": [
+        "<inbound>",
+        "<base />",
+        "<rate-limit-by-key calls=\"100\" renewal-period=\"60\" counter-key=\"@(context.Request.IpAddress)\" />",
+        "<set-header name=\"X-Custom-Header\" exists-action=\"override\"><value>processed</value></set-header>",
+        "</inbound>"
+    ],
+    "explanation": "In APIM policy XML, the `<inbound>` section wraps all inbound policies. Inside it, `<base />` should come first to inherit policies from parent scopes (e.g., All APIs or Product level). Rate limiting (`rate-limit-by-key`) is typically applied early to reject over-quota requests before further processing. Custom headers (`set-header`) are then applied after rate limiting. The section closes with `</inbound>`.\n\n**Key ordering principles:**\n- **`<base />`** is typically placed first so that inherited parent policies are evaluated before custom policies. Its position within the section controls execution order — placing it first is a best practice but not a strict requirement.\n- **Rate limiting** should be applied early to save backend resources.\n- **Header manipulation** is applied after rate checks pass.",
+    "category": "Connect to and Consume Azure Services and Third-party Services"
+}

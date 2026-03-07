@@ -1,0 +1,24 @@
+{
+    "id": "az204-16-storage-sas-permissions",
+    "question": "You need to provide a temporary, limited-access link to a specific blob in an Azure Storage account for a third-party partner. The link must expire after 24 hours and only allow 'Read' access. You must use the most secure type of shared access signature. What should you generate?",
+    "options": [
+        {
+            "text": "Account Shared Access Signature (SAS)",
+            "correct": false
+        },
+        {
+            "text": "Service Shared Access Signature (SAS)",
+            "correct": false
+        },
+        {
+            "text": "Storage Account Key",
+            "correct": false
+        },
+        {
+            "text": "User Delegation SAS",
+            "correct": true
+        }
+    ],
+    "explanation": "A **User Delegation SAS** is the most secure type of SAS because it is signed using Microsoft Entra ID credentials instead of the storage account key. Microsoft recommends using User Delegation SAS for Blob storage whenever possible. It supports scoping access to a specific blob with time-limited, read-only permissions.\n\n**Why not the other options:**\n- **Account SAS** — Delegated access at the account level; too broad for a single blob and signed with the account key.\n- **Service SAS** — Scoped to a single service, but signed with the storage account key, making it less secure than a User Delegation SAS.\n- **Storage Account Key** — Provides full access to the entire account; should never be shared with third parties.",
+    "category": "Develop for Azure Storage"
+}

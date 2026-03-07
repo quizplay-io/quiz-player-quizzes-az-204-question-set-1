@@ -1,0 +1,25 @@
+{
+    "id": "az204-04-harborview-eventhub-scaling",
+    "question": "You are configuring the Azure Event Hub for HarborView Analytics. You need to ensure the Event Hub can scale to handle sudden bursts of data from sensors without manual intervention. Which feature should you enable?",
+    "options": [
+        {
+            "text": "Capture",
+            "correct": false
+        },
+        {
+            "text": "Auto-inflate",
+            "correct": true
+        },
+        {
+            "text": "Geo-Replication",
+            "correct": false
+        },
+        {
+            "text": "Consumer Groups",
+            "correct": false
+        }
+    ],
+    "explanation": "**Auto-inflate** enables you to automatically scale the number of Throughput Units (TUs) in a Standard-tier Event Hubs namespace to meet the needs of your workload when traffic exceeds the configured amount.\n\n**Why not the other options:**\n- **Capture** — Automatically delivers streaming data to Azure Blob storage or Azure Data Lake Storage.\n- **Geo-Replication** — Provides disaster recovery by replicating metadata and data to a standby region.\n- **Consumer Groups** — Allow multiple consuming applications to each have a separate view of the event stream.",
+    "category": "Connect to and Consume Azure Services and Third-party Services",
+    "caseStudy": "scenarios/case_study_harborview_analytics.json"
+}

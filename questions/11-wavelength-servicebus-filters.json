@@ -1,0 +1,25 @@
+{
+    "id": "az204-11-wavelength-servicebus-filters",
+    "question": "Wavelength Media uses a Service Bus Topic with multiple subscriptions. You need to ensure that distribution nodes only receive notifications for the regions they are responsible for. What should you implement?",
+    "options": [
+        {
+            "text": "Exclusive locks on the Topic",
+            "correct": false
+        },
+        {
+            "text": "Correlation Filters on each Subscription",
+            "correct": true
+        },
+        {
+            "text": "Multiple separate Topics, one per region",
+            "correct": false
+        },
+        {
+            "text": "Partitioned queues",
+            "correct": false
+        }
+    ],
+    "explanation": "**Correlation Filters** (and SQL Filters) on Service Bus subscriptions allow you to filter messages based on their properties. This is the most efficient way to ensure a subscription only receives a subset of the messages published to the topic.\n\n**Why not the other options:**\n- **Exclusive locks** — Service Bus doesn't use exclusive locks on topics in this way; locks are on messages within queues or subscriptions.\n- **Multiple separate Topics** — While functional, it's less scalable and harder to manage than a single topic with filtered subscriptions.\n- **Partitioned queues** — Used for scaling throughput and improving availability, not for filtering messages to specific consumers.",
+    "category": "Connect to and Consume Azure Services and Third-party Services",
+    "caseStudy": "scenarios/case_study_wavelength_media.json"
+}

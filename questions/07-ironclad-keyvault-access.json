@@ -1,0 +1,25 @@
+{
+    "id": "az204-07-ironclad-keyvault-access",
+    "question": "You are implementing Azure Key Vault for Ironclad Security. You need to follow the principle of least privilege by using the recommended access control mechanism. Which mechanism should you use to grant the auditing microservice permission to ONLY read secrets from the Key Vault, without giving it permissions to manage the Key Vault itself?",
+    "options": [
+        {
+            "text": "Vault access policy",
+            "correct": false
+        },
+        {
+            "text": "Azure Role-Based Access Control (RBAC)",
+            "correct": true
+        },
+        {
+            "text": "Shared Access Signature (SAS) tokens",
+            "correct": false
+        },
+        {
+            "text": "Management Group override",
+            "correct": false
+        }
+    ],
+    "explanation": "**Azure RBAC** for Key Vault (the 'Azure Key Vault Secrets User' role) is now the recommended way to provide fine-grained, least-privilege access control at the secret, key, or certificate level. It integrates with the broader Azure RBAC model and supports features like Privileged Identity Management (PIM).\n\n**Why not the other options:**\n- **Vault access policy** — The legacy access control model for Key Vault. While it does support per-operation permissions, Microsoft recommends migrating to Azure RBAC.\n- **SAS tokens** — Used for Azure Storage, not for Key Vault.\n- **Management Group override** — Policies and RBAC can be applied at management groups, but 'override' is not a specific access control mechanism.",
+    "category": "Implement Azure Security",
+    "caseStudy": "scenarios/case_study_ironclad_security.json"
+}

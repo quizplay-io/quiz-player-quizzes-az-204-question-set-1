@@ -1,0 +1,9 @@
+{
+    "id": "case_study_harborview_analytics",
+    "tabs": [
+        {
+            "title": "Scenario",
+            "content": "**HarborView Analytics** provides real-time traffic monitoring for smart cities. They collect sensor data from millions of devices and process it using a combination of Azure Event Hubs and Azure Functions.\n\n**Architecture:**\n- Sensors send JSON data to an Azure Event Hub.\n- An Azure Function is triggered by the Event Hub to process and filter the data.\n- Processed data is stored in Azure Blob Storage with a specific lifecycle management policy to archive data older than 30 days and delete it after 7 years.\n\n**Requirements:**\n- The processing function must be able to handle sudden bursts of data from sensors.\n- Access to the Blob Storage account must be restricted to the processing function only, using the principle of least privilege."
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "az204-17-cosmos-indexing-policy",
+    "question": "You are optimizing an Azure Cosmos DB container for a high-volume write workload. Most of your queries filter on the 'userId' and 'timestamp' properties. To decrease write latency and RU consumption, what should you do with the default indexing policy?",
+    "options": [
+        {
+            "text": "Enable 'Automatic' indexing for all properties",
+            "correct": false
+        },
+        {
+            "text": "Change the indexing mode to 'None'",
+            "correct": false
+        },
+        {
+            "text": "Exclude all paths from indexing, then explicitly include '/userId/?' and '/timestamp/?'",
+            "correct": true
+        },
+        {
+            "text": "Set the indexing mode to 'Lazy'",
+            "correct": false
+        }
+    ],
+    "explanation": "Excluding all paths and only including the ones you query on significantly reduces the index overhead during writes, leading to lower RU consumption and better performance. This is the recommended practice for write-intensive workloads with predictable query patterns.\n\n**Why not the other options:**\n- **Automatic all** — The default. It indexes everything, which increases RU cost for every write.\n- **Indexing 'None'** — Would make your queries perform full table scans (highly inefficient and expensive).\n- **Lazy mode** — Lazy indexing performs index updates at a lower priority, which can produce inconsistent or incomplete query results. New containers are restricted from using lazy indexing, and Microsoft recommends Consistent indexing with proper path exclusion/inclusion instead.",
+    "category": "Develop for Azure Storage"
+}

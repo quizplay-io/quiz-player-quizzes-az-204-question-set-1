@@ -1,0 +1,25 @@
+{
+    "id": "az204-06-harborview-eventhub-partitioning",
+    "question": "You need to ensure that the processing Azure Function for HarborView Analytics can process events from the Event Hub in parallel. How should you design the Event Hub to support this?",
+    "options": [
+        {
+            "text": "Increase the number of Throughput Units",
+            "correct": false
+        },
+        {
+            "text": "Increase the number of Partitions",
+            "correct": true
+        },
+        {
+            "text": "Enable Event Hubs Capture",
+            "correct": false
+        },
+        {
+            "text": "Use a single Consumer Group for all function instances",
+            "correct": false
+        }
+    ],
+    "explanation": "**Partitions** are the unit of parallelism in Event Hubs. Increasing the partition count allows for more concurrent consumers (like multiple instances of an Azure Function) to read and process events simultaneously.\n\n**Why not the other options:**\n- **Throughput Units** — Control the *amount* of data (MB/s) that can be sent/received, but don't directly control the number of parallel readers.\n- **Capture** — For data archival, not for parallel processing.\n- **Single Consumer Group** — While you use consumer groups, the parallelism is driven by the partitions *within* that consumer group.",
+    "category": "Connect to and Consume Azure Services and Third-party Services",
+    "caseStudy": "scenarios/case_study_harborview_analytics.json"
+}

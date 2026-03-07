@@ -1,0 +1,24 @@
+{
+    "id": "az204-24-docker-build-yaml",
+    "question": "You are using Azure Container Registry (ACR) Tasks to build a Docker image. Your `Dockerfile` is located in the root of your repository. Which Azure CLI command should you run to build and push the image to your registry without needing to install Docker locally?",
+    "options": [
+        {
+            "text": "docker build -t myimage .",
+            "correct": false
+        },
+        {
+            "text": "az acr build --registry myregistry --image myimage:latest .",
+            "correct": true
+        },
+        {
+            "text": "az container create --image myregistry.azurecr.io/myimage:latest",
+            "correct": false
+        },
+        {
+            "text": "az acr repository import --name myregistry --image myimage:latest",
+            "correct": false
+        }
+    ],
+    "explanation": "The **az acr build** command leverages ACR Tasks to perform the build operation within the cloud. It sends the context (the local files) to ACR, builds the image using your Dockerfile, and stores it in the registry, all without requiring Docker to be installed on your local machine.\n\n**Why not the other options:**\n- **docker build** — Requires Docker to be installed locally.\n- **az container create** — Used to *run* a container in ACI, not to build an image.\n- **az acr repository import** — Used to pull an image from another registry into your ACR.",
+    "category": "Develop Azure Compute Solutions"
+}

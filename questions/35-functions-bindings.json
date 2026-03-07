@@ -1,0 +1,24 @@
+{
+    "id": "az204-35-functions-bindings",
+    "question": "You are developing an Azure Function. You want the function to read a document from Cosmos DB when it is triggered and write a message to a Service Bus queue when it finishes. How should you implement this efficiently?",
+    "options": [
+        {
+            "text": "Instantiate the CosmosClient and ServiceBusClient in every function call",
+            "correct": false
+        },
+        {
+            "text": "Use a Cosmos DB Input Binding and a Service Bus Output Binding",
+            "correct": true
+        },
+        {
+            "text": "Use the HTTP trigger only and call external APIs",
+            "correct": false
+        },
+        {
+            "text": "Use an Azure Storage table as a temporary store",
+            "correct": false
+        }
+    ],
+    "explanation": "**Input and Output Bindings** allow you to declaratively connect your function to other Azure resources. The Functions runtime handles the connection management, making your code cleaner and more efficient than manually instantiating clients in every execution.\n\n**Why not the other options:**\n- **Instantiate clients** — Less efficient and requires more boilerplate code for connection management.\n- **HTTP trigger only** — Doesn't take advantage of the specific Cosmos and Service Bus integration features of the platform.\n- **Storage table** — Adds unnecessary complexity and latency.",
+    "category": "Develop Azure Compute Solutions"
+}

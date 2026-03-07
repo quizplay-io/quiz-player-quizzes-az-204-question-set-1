@@ -1,0 +1,24 @@
+{
+    "id": "az204-31-appservice-vnet-integration",
+    "question": "You have an Azure App Service that needs to access a SQL Server database running on an Azure Virtual Machine within a private Virtual Network (VNet). The VNet does not have a public IP address. Which feature should you use to enable this connectivity?",
+    "options": [
+        {
+            "text": "Private Endpoint",
+            "correct": false
+        },
+        {
+            "text": "VNet Integration (Regional)",
+            "correct": true
+        },
+        {
+            "text": "Hybrid Connections",
+            "correct": false
+        },
+        {
+            "text": "Service Endpoints",
+            "correct": false
+        }
+    ],
+    "explanation": "**VNet Integration** (specifically Regional VNet Integration) allows your App Service to access resources in your VNet or across peered VNets by routing outbound traffic through the VNet.\n\n**Why not the other options:**\n- **Private Endpoint** — Used to allow resources *inside* the VNet to reach your *App Service* over a private IP, not the other way around.\n- **Hybrid Connections** — Used to connect to on-premises resources via a relay agent.\n- **Service Endpoints** — Allows resources *inside* a VNet to securely connect to Azure *services* (like Storage or SQL Database) over the Microsoft backbone, but doesn't solve the outbound App Service -> VNet VM connection.",
+    "category": "Develop Azure Compute Solutions"
+}

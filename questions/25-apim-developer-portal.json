@@ -1,0 +1,24 @@
+{
+    "id": "az204-25-apim-developer-portal",
+    "question": "Which component of Azure API Management (APIM) provides consumers with a web-based interface where they can discover APIs, read documentation, and test API calls?",
+    "options": [
+        {
+            "text": "APIM Gateway",
+            "correct": false
+        },
+        {
+            "text": "Management Plane",
+            "correct": false
+        },
+        {
+            "text": "Developer Portal",
+            "correct": true
+        },
+        {
+            "text": "Self-hosted Gateway",
+            "correct": false
+        }
+    ],
+    "explanation": "The **Developer Portal** is an automatically generated, fully customizable website with the documentation of your APIs. It is where consumers of your APIs can discover them and learn how to use them.\n\n**Why not the other options:**\n- **APIM Gateway** — The component that handles the actual API traffic, applies policies, and collects telemetry.\n- **Management Plane** — The administrative interface used by the API provider to configure the APIM instance.\n- **Self-hosted Gateway** — A containerized version of the default managed gateway that can be deployed on-premises or to other clouds.",
+    "category": "Connect to and Consume Azure Services and Third-party Services"
+}

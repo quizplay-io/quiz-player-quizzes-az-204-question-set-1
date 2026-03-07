@@ -1,0 +1,25 @@
+{
+    "id": "az204-02-novabridge-appservice-auth",
+    "question": "You are configuring the custom domain for NovaBridge's Azure App Service. You need to ensure the App Service can use an SSL certificate stored in Azure Key Vault. Which feature should you use to give the App Service secure access to the Key Vault without storing credentials in the application configuration?",
+    "options": [
+        {
+            "text": "App Service Authentication (Easy Auth)",
+            "correct": false
+        },
+        {
+            "text": "Managed Identity",
+            "correct": true
+        },
+        {
+            "text": "Shared Access Signature (SAS)",
+            "correct": false
+        },
+        {
+            "text": "API Keys",
+            "correct": false
+        }
+    ],
+    "explanation": "A **Managed Identity** allows the Azure App Service to authenticate to Azure Key Vault (and other services that support Microsoft Entra authentication) without needing to manage or store any credentials in code or configuration files.\n\n**Why not the other options:**\n- **Easy Auth** — Used for authenticating *users* to your application, not for your application to authenticate to other Azure services.\n- **SAS** — Used for delegating access to Azure Storage resources.\n- **API Keys** — Would require storing the key in configuration, which violates the requirement.",
+    "category": "Implement Azure Security",
+    "caseStudy": "scenarios/case_study_novabridge_software.json"
+}

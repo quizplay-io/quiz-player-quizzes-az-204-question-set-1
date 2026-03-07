@@ -1,0 +1,24 @@
+{
+    "id": "az204-33-cosmos-partition-key",
+    "question": "You are designing an Azure Cosmos DB container to store user profile data for a global application. Most queries filter by 'userId' and look up a specific user's progress. Which property should you select as the **Partition Key** to ensure optimal performance and scalability?",
+    "options": [
+        {
+            "text": "userId",
+            "correct": true
+        },
+        {
+            "text": "country",
+            "correct": false
+        },
+        {
+            "text": "lastLoginDate",
+            "correct": false
+        },
+        {
+            "text": "isActive",
+            "correct": false
+        }
+    ],
+    "explanation": "The **userId** is an excellent partition key for this scenario because it has a high cardinality (many unique values) and is the property used in most queries. This leads to a balanced distribution of data and RU consumption across physical partitions.\n\n**Why not the other options:**\n- **country** — Low cardinality; some countries will have many more users than others, leading to 'hot' partitions.\n- **lastLoginDate** — Can lead to hot partitions during specific times (e.g., many users logging in on a Monday morning).\n- **isActive** — Extremely low cardinality (True/False); creates only two logical partitions, leading to a highly uneven data distribution.",
+    "category": "Develop for Azure Storage"
+}

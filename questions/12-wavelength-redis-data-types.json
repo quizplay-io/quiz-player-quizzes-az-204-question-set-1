@@ -1,0 +1,25 @@
+{
+    "id": "az204-12-wavelength-redis-data-types",
+    "question": "The video encoding engine for Wavelength Media needs to store a large list of metadata tags for each video in Azure Cache for Redis. The tags must be stored in a way that allows for fast insertion and retrieval while ensuring no duplicate tags exist for a single video. Which Redis data type should you use?",
+    "options": [
+        {
+            "text": "Strings",
+            "correct": false
+        },
+        {
+            "text": "Lists",
+            "correct": false
+        },
+        {
+            "text": "Sets",
+            "correct": true
+        },
+        {
+            "text": "Hashes",
+            "correct": false
+        }
+    ],
+    "explanation": "**Sets** in Redis are an unordered collection of unique strings. They are ideal for storing tags because they automatically handle duplicates and provide fast insertion and membership checking.\n\n**Why not the other options:**\n- **Strings** — Can only store a single value, not a collection of tags (unless serialized, which is less efficient for partial updates).\n- **Lists** — Allow duplicate values and are primarily for ordered sequences.\n- **Hashes** — Used to store field-value pairs; while they could work (using tags as fields), a Set is the more direct and efficient choice for a simple collection of unique items.",
+    "category": "Connect to and Consume Azure Services and Third-party Services",
+    "caseStudy": "scenarios/case_study_wavelength_media.json"
+}

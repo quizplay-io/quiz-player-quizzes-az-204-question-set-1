@@ -1,0 +1,9 @@
+{
+    "id": "case_study_ironclad_security",
+    "tabs": [
+        {
+            "title": "Scenario",
+            "content": "**Ironclad Security Solutions** develops a security auditing platform for government agencies. Their platform is composed of several microservices running on Azure Container Instances (ACI) and Azure App Service.\n\n**Security Requirements:**\n- All application secrets, including database connection strings and certificates, must be stored centrally and encrypted at rest.\n- Microservices must authenticate to each other without using hard-coded passwords or API keys.\n- The auditing platform must support multi-factor authentication for all users."
+        }
+    ]
+}

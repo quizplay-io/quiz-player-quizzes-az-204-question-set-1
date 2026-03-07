@@ -1,0 +1,24 @@
+{
+    "id": "az204-13-appservice-slots-traffic",
+    "question": "You have an Azure App Service with a production slot and a staging slot. You want to gradually divert 10% of the live traffic to the staging slot to perform testing before a full rollout. Which App Service feature should you use?",
+    "options": [
+        {
+            "text": "Traffic Manager",
+            "correct": false
+        },
+        {
+            "text": "Deployment Slots - Traffic Routing",
+            "correct": true
+        },
+        {
+            "text": "Azure Front Door",
+            "correct": false
+        },
+        {
+            "text": "Application Gateway",
+            "correct": false
+        }
+    ],
+    "explanation": "Azure App Service **Deployment Slots** include a feature called **Traffic Routing** (or 'Testing in production'). This allows you to specify a percentage of traffic to be automatically routed to a non-production slot.\n\n**Why not the other options:**\n- **Traffic Manager** — A DNS-based load balancer; while it can divert traffic, it's typically used for global distribution across regions, not between slots of a single app.\n- **Azure Front Door** — A global CDN and load balancer; overkill for routing between app service slots.\n- **Application Gateway** — A regional layer-7 load balancer; it doesn't natively manage app service slot traffic routing in the same way as the built-in slot feature.",
+    "category": "Develop Azure Compute Solutions"
+}

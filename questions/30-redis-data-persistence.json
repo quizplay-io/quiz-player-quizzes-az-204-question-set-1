@@ -1,0 +1,24 @@
+{
+    "id": "az204-30-redis-data-persistence",
+    "question": "You need to ensure that data stored in Azure Cache for Redis is persisted to an Azure Storage account so that it can be recovered in the event of a cache failure. Which feature should you enable?",
+    "options": [
+        {
+            "text": "Redis Data Persistence (RDB or AOF)",
+            "correct": true
+        },
+        {
+            "text": "Clustering",
+            "correct": false
+        },
+        {
+            "text": "Geo-Replication",
+            "correct": false
+        },
+        {
+            "text": "Redis Modules",
+            "correct": false
+        }
+    ],
+    "explanation": "**Redis Data Persistence** allows you to persist data stored in Redis. On the Premium tier, you can choose between RDB (Redis Database) snapshots or AOF (Append Only File) logs, which are stored in an Azure Storage account linked to the cache. On Enterprise tiers, persistence uses managed disks attached to the cache instance instead.\n\n**Why not the other options:**\n- **Clustering** — Used for scaling throughput and memory across multiple nodes.\n- **Geo-Replication** — Used for replicating data between different Azure regions for disaster recovery.\n- **Redis Modules** — Add extra functionality to Redis (like RedisJSON or RediSearch), but don't handle data persistence directly.",
+    "category": "Connect to and Consume Azure Services and Third-party Services"
+}

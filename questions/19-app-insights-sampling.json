@@ -1,0 +1,24 @@
+{
+    "id": "az204-19-app-insights-sampling",
+    "question": "Your application is sending a massive amount of telemetry to Azure Application Insights, causing costs to exceed the budget. You need to reduce the amount of data sent without losing statistically significant insights into your application's performance. Which feature should you implement?",
+    "options": [
+        {
+            "text": "Continuous Export",
+            "correct": false
+        },
+        {
+            "text": "Sampling",
+            "correct": true
+        },
+        {
+            "text": "Log Aggregation",
+            "correct": false
+        },
+        {
+            "text": "Daily Cap",
+            "correct": false
+        }
+    ],
+    "explanation": "**Sampling** is a feature in Application Insights that allows you to reduce the amount of telemetry sent to the service while maintaining a statistically correct analysis of application data. It can be done at the SDK level (Adaptive Sampling), ingestion level, or fixed-rate.\n\n**Why not the other options:**\n- **Continuous Export** — Used to export telemetry to a storage account for long-term retention or external analysis.\n- **Log Aggregation** — A general term for combining logs, but not a specific Application Insights cost-reduction feature.\n- **Daily Cap** — Stops data ingestion once a specific volume is reached, which can lead to losing *all* data for the remainder of the day, unlike sampling which preserves the representativeness of the data.",
+    "category": "Monitor, Troubleshoot, and Optimize Azure Solutions"
+}

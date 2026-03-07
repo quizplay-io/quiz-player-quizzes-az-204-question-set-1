@@ -1,0 +1,24 @@
+{
+    "id": "az204-18-functions-scaling-plans",
+    "question": "You are deploying an Azure Function that requires pre-warmed instances to avoid cold starts and must be able to connect to a Virtual Network (VNet). Which hosting plan should you choose if you still want some degree of auto-scaling and avoid managed servers where possible?",
+    "options": [
+        {
+            "text": "Consumption plan",
+            "correct": false
+        },
+        {
+            "text": "Premium plan (Elastic Premium)",
+            "correct": true
+        },
+        {
+            "text": "Dedicated plan (App Service Plan)",
+            "correct": false
+        },
+        {
+            "text": "Azure Container Apps",
+            "correct": false
+        }
+    ],
+    "explanation": "The **Premium plan** (EP) provides features not available in Consumption, such as VNet connectivity, pre-warmed instances (no cold start), and enhanced scaling, while still being a managed, serverless-style hosting option.\n\n**Why not the other options:**\n- **Consumption plan** — Does not support pre-warmed instances or VNet integration, making it unsuitable for this scenario. (Note: The newer Flex Consumption plan adds VNet support, serverless billing, and 'always ready' instances, but the Premium plan remains the established choice for these requirements.)\n- **Dedicated plan** — Requires you to manage the App Service plan size and scaling manually; it's not truly 'serverless-style' in its scaling behavior.\n- **Azure Container Apps** — A valid hosting option for functions (via KEDA), but the 'Premium plan' is the specific Azure Functions hosting plan designed to solve the cold start and VNet requirements.",
+    "category": "Develop Azure Compute Solutions"
+}

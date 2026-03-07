@@ -1,0 +1,24 @@
+{
+    "id": "az204-15-functions-durable-patterns",
+    "question": "You are developing a complex Azure Function workflow that involves multiple functions running in parallel, followed by a final function that aggregates the results of all the parallel tasks. Which Durable Functions pattern should you use?",
+    "options": [
+        {
+            "text": "Function Chaining",
+            "correct": false
+        },
+        {
+            "text": "Fan-out/fan-in",
+            "correct": true
+        },
+        {
+            "text": "Async HTTP APIs",
+            "correct": false
+        },
+        {
+            "text": "Monitor",
+            "correct": false
+        }
+    ],
+    "explanation": "The **Fan-out/fan-in** pattern is used when you need to execute multiple functions in parallel (fan-out) and then wait for all of them to finish before continuing with a subsequent aggregation step (fan-in).\n\n**Why not the other options:**\n- **Function Chaining** — Executing a sequence of functions in a specific order (A -> B -> C).\n- **Async HTTP APIs** — Solves the problem of coordinating the state of long-running operations with external clients.\n- **Monitor** — A recurring process in a workflow, such as polling until a certain condition is met.",
+    "category": "Develop Azure Compute Solutions"
+}

@@ -1,0 +1,24 @@
+{
+    "id": "az204-14-logic-apps-custom-connector",
+    "question": "You need to integrate an Azure Logic App with an internal proprietary REST API that does not have a pre-built connector in the Azure portal. What is the most common way to enable this integration while making the API reusable across multiple Logic Apps and Power Automate flows?",
+    "options": [
+        {
+            "text": "Use the HTTP action in every Logic App",
+            "correct": false
+        },
+        {
+            "text": "Create a Custom Connector",
+            "correct": true
+        },
+        {
+            "text": "Write an Azure Function as a proxy",
+            "correct": false
+        },
+        {
+            "text": "Use an Azure Service Bus queue",
+            "correct": false
+        }
+    ],
+    "explanation": "A **Custom Connector** allows you to wrap your REST API (using an OpenAPI/Swagger definition or Postman collection) so that it can be used like any other built-in connector in Logic Apps, Power Automate, and Power Apps.\n\n**Why not the other options:**\n- **HTTP action** — While it works, it's not 'reusable' as a connector and requires re-configuring the headers/auth in every workflow.\n- **Azure Function** — Can act as a proxy, but you'd still need a way to call the function easily; a custom connector is the formal way to expose an API to the low-code platform.\n- **Service Bus** — Useful for asynchronous messaging, but doesn't solve the problem of exposing a REST API's methods to the Logic App designer.",
+    "category": "Connect to and Consume Azure Services and Third-party Services"
+}

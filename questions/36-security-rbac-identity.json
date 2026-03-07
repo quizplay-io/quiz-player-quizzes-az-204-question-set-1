@@ -1,0 +1,24 @@
+{
+    "id": "az204-36-security-rbac-identity",
+    "question": "You need to grant an Azure Function access to a secret in Key Vault. Following the principle of least privilege, you create a User-Assigned Managed Identity. What is the next step to enable the Function to retrieve the secret?",
+    "options": [
+        {
+            "text": "Share the Storage Account key with the Function",
+            "correct": false
+        },
+        {
+            "text": "Assign the 'Key Vault Secrets User' role to the Managed Identity at the Key Vault scope",
+            "correct": true
+        },
+        {
+            "text": "Enable 'Public Access' on the Key Vault",
+            "correct": false
+        },
+        {
+            "text": "Create an Azure Policy to allow all Functions to read secrets",
+            "correct": false
+        }
+    ],
+    "explanation": "After creating the Managed Identity, you must use **Azure RBAC** to assign it a role that has the minimum necessary permissions. The 'Key Vault Secrets User' role allows a principal to read secret values without having management permissions over the Vault itself.\n\n**Why not the other options:**\n- **Share Account key** — Security risk and irrelevant to Key Vault.\n- **Public Access** — A severe security violation; Key Vaults should be accessed securely.\n- **Azure Policy** — Policies are for governing *resource configuration*, not for granting *user or identity permissions* to data or secrets.",
+    "category": "Implement Azure Security"
+}

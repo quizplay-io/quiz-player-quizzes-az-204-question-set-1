@@ -1,0 +1,25 @@
+{
+    "id": "az204-01-novabridge-cosmos-consistency",
+    "question": "NovaBridge Software needs to choose a consistency level for their Azure Cosmos DB account. The application requires that reads are guaranteed to return the most recent version of a document, even if it means higher latency and lower availability for read operations. Which consistency level should they choose?",
+    "options": [
+        {
+            "text": "Eventual",
+            "correct": false
+        },
+        {
+            "text": "Session",
+            "correct": false
+        },
+        {
+            "text": "Bounded Staleness",
+            "correct": false
+        },
+        {
+            "text": "Strong",
+            "correct": true
+        }
+    ],
+    "explanation": "**Strong consistency** offers a linearizability guarantee. The reads are guaranteed to return the most recent committed version of an item. A client never sees an uncommitted or partial write. This level provides the highest consistency but the lowest performance and availability compared to other levels.\n\n**Why not the other options:**\n- **Eventual** — No guarantee on order or timeliness of reads; lowest latency.\n- **Session** — Consistency is scoped to a client session; good for 'read your own writes'.\n- **Bounded Staleness** — Reads might lag behind writes by a specific interval of time or number of versions.",
+    "category": "Develop for Azure Storage",
+    "caseStudy": "scenarios/case_study_novabridge_software.json"
+}

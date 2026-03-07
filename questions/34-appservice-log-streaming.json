@@ -1,0 +1,24 @@
+{
+    "id": "az204-34-appservice-log-streaming",
+    "question": "You are troubleshooting a live issue in an Azure App Service. You want to view the stdout and stderr logs from your application in real-time as the application handles requests. Which tool should you use?",
+    "options": [
+        {
+            "text": "Azure Monitor Metrics",
+            "correct": false
+        },
+        {
+            "text": "Log Streaming",
+            "correct": true
+        },
+        {
+            "text": "App Service Advisor",
+            "correct": false
+        },
+        {
+            "text": "Deployment Center",
+            "correct": false
+        }
+    ],
+    "explanation": "**Log Streaming** (accessible via the portal, CLI, or VS Code) provides a live stream of application and web server logs. It's the standard tool for real-time troubleshooting of console output.\n\n**Why not the other options:**\n- **Azure Monitor Metrics** — For numerical data (CPU, memory) over time, not for text-based logs.\n- **Advisor** — For optimization tips.\n- **Deployment Center** — For managing CI/CD pipelines and deployment settings.",
+    "category": "Monitor, Troubleshoot, and Optimize Azure Solutions"
+}

@@ -1,0 +1,25 @@
+{
+    "id": "az204-03-novabridge-redis-eviction",
+    "question": "The Azure Cache for Redis used by NovaBridge is reaching its memory limit. You need to configure a policy that removes the least recently used keys, regardless of their expiration time, when the cache is full. Which eviction policy should you select?",
+    "options": [
+        {
+            "text": "volatile-lru",
+            "correct": false
+        },
+        {
+            "text": "allkeys-lru",
+            "correct": true
+        },
+        {
+            "text": "noeviction",
+            "correct": false
+        },
+        {
+            "text": "volatile-ttl",
+            "correct": false
+        }
+    ],
+    "explanation": "The **allkeys-lru** policy tells Redis to evict the least recently used keys among *all* keys, regardless of whether they have an 'expire' set. This ensures the cache remains under the memory limit by removing old data.\n\n**Why not the other options:**\n- **volatile-lru** — Only evicts keys that have an expiration (TTL) set.\n- **noeviction** — Returns an error when the memory limit is reached and a write operation is attempted.\n- **volatile-ttl** — Evicts keys with an expiration, starting with those with the shortest remaining time-to-live.",
+    "category": "Connect to and Consume Azure Services and Third-party Services",
+    "caseStudy": "scenarios/case_study_novabridge_software.json"
+}

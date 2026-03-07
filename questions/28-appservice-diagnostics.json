@@ -1,0 +1,24 @@
+{
+    "id": "az204-28-appservice-diagnostics",
+    "question": "Your Azure App Service is experiencing intermittent 500 errors. Which tool in the Azure portal provides an interactive experience to help you diagnose and solve problems by analyzing logs and identifying common issues with web apps?",
+    "options": [
+        {
+            "text": "Log Analytics",
+            "correct": false
+        },
+        {
+            "text": "Diagnose and solve problems (App Service Diagnostics)",
+            "correct": true
+        },
+        {
+            "text": "Kudu Console",
+            "correct": false
+        },
+        {
+            "text": "Azure Advisor",
+            "correct": false
+        }
+    ],
+    "explanation": "**App Service Diagnostics** is an intelligent and interactive experience that helps you troubleshoot your app with no configuration required. It provides a set of diagnostic categories (like Availability and Performance) and specific insights.\n\n**Why not the other options:**\n- **Log Analytics** — A powerful tool for querying logs across many resources, but lacks the specific, guided diagnostic experience for web apps.\n- **Kudu Console** — A set of developer tools for direct access to the app service environment (file explorer, process explorer, etc.).\n- **Azure Advisor** — Focuses on general best practice recommendations, not active troubleshooting of application errors.",
+    "category": "Monitor, Troubleshoot, and Optimize Azure Solutions"
+}

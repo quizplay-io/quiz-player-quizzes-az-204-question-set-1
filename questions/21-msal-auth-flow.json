@@ -1,0 +1,24 @@
+{
+    "id": "az204-21-msal-auth-flow",
+    "question": "You are developing a mobile application that needs to authenticate users via Microsoft Entra ID. Which Microsoft Authentication Library (MSAL) flow should you use to allow users to sign in and authorize the app using the device's system browser?",
+    "options": [
+        {
+            "text": "Client Credentials Flow",
+            "correct": false
+        },
+        {
+            "text": "Authorization Code Flow with PKCE",
+            "correct": true
+        },
+        {
+            "text": "On-Behalf-Of Flow",
+            "correct": false
+        },
+        {
+            "text": "Device Code Flow",
+            "correct": false
+        }
+    ],
+    "explanation": "**Authorization Code Flow with PKCE** (Proof Key for Code Exchange) is the recommended and most secure flow for public client applications like mobile apps or Single Page Applications (SPAs). It prevents interception of the authorization code.\n\n**Why not the other options:**\n- **Client Credentials Flow** — Used for service-to-service communication where no user is involved.\n- **On-Behalf-Of Flow** — Used when a web API needs to call another web API on behalf of the user who called it.\n- **Device Code Flow** — Used for devices that don't have a browser or have limited input capabilities (like a smart TV).",
+    "category": "Implement Azure Security"
+}

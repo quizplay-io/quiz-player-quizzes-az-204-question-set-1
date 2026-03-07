@@ -1,0 +1,25 @@
+{
+    "id": "az204-10-wavelength-servicebus-sessions",
+    "question": "Wavelength Media needs to ensure that video encoding tasks are processed in the order they are received. Which Azure Service Bus feature must be enabled to guarantee first-in-first-out (FIFO) processing when multiple consumers are involved?",
+    "options": [
+        {
+            "text": "Dead-lettering",
+            "correct": false
+        },
+        {
+            "text": "Duplicate detection",
+            "correct": false
+        },
+        {
+            "text": "Sessions",
+            "correct": true
+        },
+        {
+            "text": "Auto-forwarding",
+            "correct": false
+        }
+    ],
+    "explanation": "**Sessions** in Azure Service Bus allow for joint and ordered handling of unbounded sequences of related messages. When you use sessions, you can guarantee FIFO processing even when using competing consumers, as a session is locked to a single receiver at a time.\n\n**Why not the other options:**\n- **Dead-lettering** — Used to store messages that cannot be delivered or processed.\n- **Duplicate detection** — Ensures a message is not processed multiple times within a specific time window.\n- **Auto-forwarding** — Automatically sends messages from one queue or subscription to another.",
+    "category": "Connect to and Consume Azure Services and Third-party Services",
+    "caseStudy": "scenarios/case_study_wavelength_media.json"
+}

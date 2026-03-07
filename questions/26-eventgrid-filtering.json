@@ -1,0 +1,24 @@
+{
+    "id": "az204-26-eventgrid-filtering",
+    "question": "You are using Azure Event Grid. You want an event subscription to only receive events where the 'subject' property starts with '/blobServices/default/containers/images/'. What should you configure in the event subscription?",
+    "options": [
+        {
+            "text": "Advanced Filters",
+            "correct": false
+        },
+        {
+            "text": "Subject Filtering (Subject Begins With)",
+            "correct": true
+        },
+        {
+            "text": "Event Type Filtering",
+            "correct": false
+        },
+        {
+            "text": "Key-value pair matching",
+            "correct": false
+        }
+    ],
+    "explanation": "**Subject Filtering** allows you to filter events based on the beginning or end of the subject string. This is a simple and efficient way to route events for specific resources (like a specific folder in a blob container).\n\n**Why not the other options:**\n- **Advanced Filters** — Allows for more complex logic (greater than, less than, contains, etc.) on any field in the data payload, but simple subject matching is handled by the dedicated subject filter.\n- **Event Type Filtering** — Filters by the type of event (e.g., Microsoft.Storage.BlobCreated).\n- **Key-value pair matching** — Not a standard term for Event Grid filtering.",
+    "category": "Connect to and Consume Azure Services and Third-party Services"
+}

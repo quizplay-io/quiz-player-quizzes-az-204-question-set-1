@@ -1,0 +1,9 @@
+{
+    "id": "case_study_novabridge_software",
+    "tabs": [
+        {
+            "title": "Scenario",
+            "content": "**NovaBridge Software** is developing a multi-tier web application to manage global software licenses. The application will use Azure App Service for the front-end and a set of Azure Functions for background processing.\n\n**Application Structure:**\n- **Web Tier**: ASP.NET Core application hosted on Azure App Service.\n- **Processing Tier**: Azure Functions triggered by messages in an Azure Queue.\n- **Data Tier**: Azure Cosmos DB (Core/SQL API) with multiple write regions.\n- **Caching**: Azure Cache for Redis to improve response times for license lookups.\n\n**Requirements:**\n- The App Service must use a custom domain with an SSL/TLS certificate managed by Azure.\n- Background functions must scale independently based on the number of messages in the queue.\n- The application must support a high volume of concurrent users during specific promotional windows."
+        }
+    ]
+}

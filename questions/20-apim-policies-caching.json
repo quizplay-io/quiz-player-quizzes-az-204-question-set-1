@@ -1,0 +1,24 @@
+{
+    "id": "az204-20-apim-policies-caching",
+    "question": "You are configuring Azure API Management (APIM). You want to improve the performance of an API by caching responses for 1 hour. Which policy should you add to the `<inbound>` section of the API operation?",
+    "options": [
+        {
+            "text": "cache-lookup",
+            "correct": true
+        },
+        {
+            "text": "cache-store",
+            "correct": false
+        },
+        {
+            "text": "rewrite-uri",
+            "correct": false
+        },
+        {
+            "text": "set-variable",
+            "correct": false
+        }
+    ],
+    "explanation": "To implement caching in APIM, you typically use **cache-lookup** in the `<inbound>` section to check if a valid response exists in the cache, and **cache-store** in the `<outbound>` section to save the response to the cache for future use.\n\n**Why not the other options:**\n- **cache-store** — This belongs in the `<outbound>` section to store the response *after* it has been received from the backend.\n- **rewrite-uri** — Used to change the request URL before it reaches the backend.\n- **set-variable** — Used to create or update a variable in the policy context.",
+    "category": "Connect to and Consume Azure Services and Third-party Services"
+}
